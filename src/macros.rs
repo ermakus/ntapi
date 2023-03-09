@@ -83,7 +83,7 @@ macro_rules! UNION {
     ($(#[$attrs:meta])* union $name:ident {
         $($variant:ident: $ftype:ty,)+
     }) => (
-        #[repr(C)] $(#[$attrs])*
+        #[repr(C, packed)] $(#[$attrs])*
         pub union $name {
             $(pub $variant: $ftype,)+
         }
